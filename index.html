@@ -1,398 +1,185 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Glücksformat – Marketing, Struktur & Umsetzung</title>
-
-    <meta name="description" content="Glücksformat – Marketing, Struktur und Umsetzung. Damit Ideen sich verwirklichen.">
-
-    <style>
-        :root {
-            --salbei: #9CAF9B;
-            --salbei-dunkel: #526657;
-            --salbei-hell: #DCE5DC;
-
-            --altrosa: #C9908A;
-            --altrosa-hell: #E8C9C5;
-
-            --creme: #FBF8F3;
-            --weiss: #FFFFFF;
-
-            --text: #4D574F;
-            --text-hell: #7B837D;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            font-family: Arial, Helvetica, sans-serif;
-
-            background:
-                radial-gradient(
-                    circle at 10% 15%,
-                    var(--salbei-hell) 0,
-                    transparent 25%
-                ),
-                radial-gradient(
-                    circle at 90% 85%,
-                    var(--altrosa-hell) 0,
-                    transparent 27%
-                ),
-                var(--creme);
-
-            color: var(--text);
-            padding: 30px;
-        }
-
-        .page {
-            width: 100%;
-            max-width: 900px;
-
-            text-align: center;
-
-            background: rgba(255, 255, 255, 0.90);
-
-            padding: 70px 45px;
-
-            border-radius: 32px;
-
-            box-shadow:
-                0 25px 70px rgba(82, 102, 87, 0.12);
-
-            border: 1px solid rgba(156, 175, 155, 0.35);
-        }
-
-        /* Logo / Herz */
-
-        .logo {
-            width: 78px;
-            height: 78px;
-
-            margin: 0 auto 25px;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            border-radius: 50%;
-
-            background: var(--altrosa-hell);
-
-            color: var(--altrosa);
-
-            font-size: 40px;
-
-            box-shadow:
-                0 10px 30px rgba(201, 144, 138, 0.20);
-        }
-
-        /* Markenname */
-
-        .brand {
-            font-size: 16px;
-
-            letter-spacing: 5px;
-
-            text-transform: uppercase;
-
-            color: var(--salbei-dunkel);
-
-            font-weight: bold;
-
-            margin-bottom: 20px;
-        }
-
-        /* Hauptüberschrift */
-
-        h1 {
-            font-family: Georgia, "Times New Roman", serif;
-
-            font-size: clamp(42px, 8vw, 76px);
-
-            line-height: 1.02;
-
-            color: var(--salbei-dunkel);
-
-            margin-bottom: 22px;
-
-            letter-spacing: -2px;
-        }
-
-        /* Claim */
-
-        .claim {
-            font-family: Georgia, "Times New Roman", serif;
-
-            font-size: clamp(22px, 4vw, 34px);
-
-            color: var(--altrosa);
-
-            margin-bottom: 42px;
-        }
-
-        /* Trennlinie */
-
-        .divider {
-            width: 75px;
-            height: 3px;
-
-            background: var(--salbei);
-
-            margin: 0 auto 40px;
-
-            border-radius: 10px;
-        }
-
-        /* Text */
-
-        .text {
-            max-width: 650px;
-
-            margin: 0 auto;
-
-            font-size: 18px;
-
-            line-height: 1.8;
-
-            color: var(--text-hell);
-        }
-
-        .text p {
-            margin-bottom: 20px;
-        }
-
-        .highlight {
-            color: var(--salbei-dunkel);
-
-            font-weight: bold;
-        }
-
-        /* Coming-Soon Button */
-
-        .coming {
-            display: inline-block;
-
-            margin-top: 42px;
-
-            padding: 15px 28px;
-
-            background: var(--salbei-dunkel);
-
-            color: white;
-
-            border-radius: 50px;
-
-            font-weight: bold;
-
-            letter-spacing: .3px;
-
-            box-shadow:
-                0 10px 25px rgba(82, 102, 87, 0.18);
-
-            transition:
-                transform .2s ease,
-                box-shadow .2s ease;
-        }
-
-        .coming:hover {
-            transform: translateY(-3px);
-
-            box-shadow:
-                0 15px 30px rgba(82, 102, 87, 0.23);
-        }
-
-        /* Footer */
-
-        .footer {
-            margin-top: 45px;
-
-            font-size: 14px;
-
-            color: #9AA39C;
-        }
-
-        /* Dekorative Kreise */
-
-        .decoration {
-            position: fixed;
-
-            width: 120px;
-            height: 120px;
-
-            border-radius: 50%;
-
-            pointer-events: none;
-
-            opacity: .35;
-
-            z-index: -1;
-        }
-
-        .decoration.one {
-            top: 8%;
-            left: 5%;
-
-            background: var(--salbei-hell);
-        }
-
-        .decoration.two {
-            bottom: 7%;
-            right: 5%;
-
-            background: var(--altrosa-hell);
-        }
-
-        /* Mobile */
-
-        @media (max-width: 600px) {
-
-            body {
-                padding: 15px;
-            }
-
-            .page {
-                padding: 50px 25px;
-            }
-
-            .text {
-                font-size: 16px;
-            }
-
-            .brand {
-                letter-spacing: 3px;
-            }
-
-            .logo {
-                width: 68px;
-                height: 68px;
-                font-size: 34px;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Glücksformat – Damit Ideen sich verwirklichen</title>
+
+  <meta
+    name="description"
+    content="Glücksformat verbindet Marketing, Struktur und Umsetzung – persönlich, unkompliziert und mit Blick für besondere Ideen."
+  >
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 40px 20px;
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.7;
+      color: #27313d;
+      background: #fff8f1;
+    }
+
+    main {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 60px;
+      background: #ffffff;
+      border-radius: 24px;
+      box-shadow: 0 12px 40px rgba(62, 48, 39, 0.08);
+    }
+
+    .status {
+      display: inline-block;
+      margin-bottom: 24px;
+      padding: 7px 14px;
+      color: #854b60;
+      background: #fce8ee;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    h1 {
+      margin: 0;
+      color: #854b60;
+      font-size: 52px;
+      line-height: 1.1;
+    }
+
+    .services {
+      margin: 12px 0 35px;
+      color: #b16d7d;
+      font-size: 18px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    h2 {
+      margin: 0 0 28px;
+      color: #27313d;
+      font-size: 30px;
+      line-height: 1.3;
+    }
+
+    p {
+      margin: 0 0 22px;
+    }
+
+    .highlight {
+      margin: 35px 0;
+      padding: 25px;
+      background: #fdf1e8;
+      border-left: 5px solid #d99a78;
+      border-radius: 12px;
+    }
+
+    .highlight p {
+      margin: 0;
+    }
+
+    .ending {
+      margin-top: 35px;
+      color: #854b60;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    footer {
+      margin-top: 45px;
+      padding-top: 25px;
+      border-top: 1px solid #eadfd7;
+      color: #796f69;
+      text-align: center;
+    }
+
+    @media (max-width: 650px) {
+      body {
+        padding: 15px;
+      }
+
+      main {
+        padding: 35px 25px;
+        border-radius: 18px;
+      }
+
+      h1 {
+        font-size: 39px;
+      }
+
+      h2 {
+        font-size: 25px;
+      }
+    }
+  </style>
 </head>
 
 <body>
+  <main>
+    <span class="status">Im Aufbau</span>
 
-    <!-- Dekorative Elemente -->
-    <div class="decoration one"></div>
-    <div class="decoration two"></div>
+    <header>
+      <h1>Glücksformat</h1>
+      <p class="services">Marketing · Struktur · Umsetzung</p>
+      <h2>Damit Ideen sich verwirklichen.</h2>
+    </header>
 
+    <section>
+      <p>
+        Manchmal beginnt alles mit einer Idee. Mit einem Gedanken,
+        einem Herzensprojekt oder dem Wunsch, etwas Eigenes auf die
+        Beine zu stellen.
+      </p>
 
-    <!-- Hauptinhalt -->
-    <main class="page">
+      <p>
+        Doch zwischen „Ich habe da eine Idee“ und „Es ist geschafft“
+        liegen oft viele kleine Schritte: Struktur schaffen, sichtbar
+        werden, die richtigen Worte finden, Dinge planen und einfach
+        anfangen.
+      </p>
 
-        <!-- Logo -->
-        <div class="logo">
-            ♡
-        </div>
+      <p>
+        Genau hier entsteht <strong>Glücksformat</strong>.
+      </p>
 
+      <p>
+        Ein Ort für kreative Ideen, klare Strukturen und liebevolle
+        Umsetzung. Für Menschen, Projekte und kleine Unternehmen, die
+        etwas bewegen möchten – aber vielleicht noch nicht genau wissen,
+        wie sie aus ihrer Idee einen konkreten Weg machen.
+      </p>
 
-        <!-- Markenname -->
-        <div class="brand">
-            Glücksformat
-        </div>
+      <div class="highlight">
+        <p>
+          Glücksformat verbindet <strong>Marketing, Struktur und
+          Umsetzung</strong> – persönlich, unkompliziert und mit Blick
+          für das, was eine Idee besonders macht.
+        </p>
+      </div>
 
+      <p>
+        Diese Website befindet sich gerade im Aufbau. Aber hinter den
+        Kulissen entsteht bereits etwas Schönes.
+      </p>
 
-        <!-- Überschrift -->
-        <h1>
-            Marketing.<br>
-            Struktur.<br>
-            Umsetzung.
-        </h1>
+      <p>
+        Glücksformat – damit aus Ideen Wirklichkeit wird. Und aus
+        Wirklichkeit etwas, das glücklich macht.
+      </p>
 
+      <p class="ending">
+        ✨ Bald gibt es hier mehr zu entdecken.
+      </p>
+    </section>
 
-        <!-- Claim -->
-        <div class="claim">
-            Damit Ideen sich verwirklichen.
-        </div>
-
-
-        <!-- Trennlinie -->
-        <div class="divider"></div>
-
-
-        <!-- Beschreibung -->
-        <div class="text">
-
-            <p>
-                Manchmal beginnt alles mit einer kleinen Idee.
-                Einem Gedanken, einem Herzensprojekt oder dem Wunsch,
-                etwas Eigenes entstehen zu lassen.
-            </p>
-
-            <p>
-                Doch zwischen
-                <span class="highlight">
-                    „Ich habe da eine Idee.“
-                </span>
-                und
-                <span class="highlight">
-                    „Ich habe es geschafft.“
-                </span>
-                liegen oft viele kleine Schritte.
-            </p>
-
-            <p>
-                Genau hier entsteht
-                <span class="highlight">
-                    Glücksformat.
-                </span>
-            </p>
-
-            <p>
-                Ein Ort für
-                <span class="highlight">
-                    Marketing, Struktur und Umsetzung.
-                </span>
-                Für Ideen, die nicht nur Ideen bleiben sollen,
-                sondern ihren Weg in die Wirklichkeit finden möchten.
-            </p>
-
-            <p>
-                Mit einem klaren Blick für das Wesentliche,
-                kreativen Gedanken und einer guten Portion Herz
-                entsteht aus einem ersten Gedanken Schritt für Schritt
-                etwas Greifbares.
-            </p>
-
-            <p>
-                <span class="highlight">
-                    Diese Seite befindet sich gerade im Aufbau.
-                </span>
-                Hinter den Kulissen wird bereits fleißig gestaltet,
-                sortiert, geplant und verwirklicht.
-            </p>
-
-        </div>
-
-
-        <!-- Hinweis -->
-        <div class="coming">
-            ✿ Bald gibt es hier mehr zu entdecken.
-        </div>
-
-
-        <!-- Footer -->
-        <div class="footer">
-            Glücksformat · Marketing · Struktur · Umsetzung
-        </div>
-
-    </main>
-
+    <footer>
+      Glücksformat
+    </footer>
+  </main>
 </body>
 </html>
