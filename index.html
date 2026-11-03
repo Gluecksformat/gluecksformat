@@ -70,4 +70,178 @@
         }
 
         /* Buttons */
-        .btn-outline-
+        .btn-outline-white {
+            display: inline-block;
+            border: 1px solid var(--text-white);
+            color: var(--text-white);
+            padding: 12px 35px;
+            border-radius: 2px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            letter-spacing: 0.1em;
+            transition: all 0.3s ease;
+            background: transparent;
+        }
+
+        .btn-outline-white:hover {
+            background-color: var(--text-white);
+            color: var(--ci-beige);
+        }
+
+        /* Section 2: 3 Prinzipien - Beige */
+        .principles-section {
+            background: var(--ci-beige);
+            color: var(--text-white);
+            padding: 70px 20px;
+        }
+
+        .principles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 40px;
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .principle-item svg {
+            width: 36px;
+            height: 36px;
+            stroke: var(--text-white);
+            stroke-width: 1.5;
+            fill: none;
+            margin-bottom: 15px;
+        }
+
+        .principle-item h3 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            color: var(--text-white);
+        }
+
+        .principle-item p {
+            font-size: 0.9rem;
+            color: var(--text-white);
+            opacity: 0.9;
+        }
+
+        /* Section 3: Wobei ich dich unterstütze - Beige */
+        .services-section {
+            background: var(--ci-beige);
+            color: var(--text-white);
+            padding: 0 20px 80px 20px;
+        }
+
+        .services-section h2 {
+            text-align: center;
+            font-size: 1.8rem;
+            color: var(--text-white);
+            margin-bottom: 50px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            padding: 35px 25px;
+            border-radius: 2px;
+            text-align: center;
+        }
+
+        .service-card h3 {
+            color: var(--text-white);
+            margin-bottom: 15px;
+            font-size: 1.15rem;
+        }
+
+        .service-card p {
+            color: var(--text-white);
+            font-size: 0.92rem;
+            line-height: 1.7;
+            opacity: 0.95;
+        }
+
+        /* Section 4: Über mich - Helles Off-White */
+        .about-wrapper {
+            background: var(--bg-offwhite);
+            padding: 80px 20px;
+        }
+
+        .about-section {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            align-items: center;
+        }
+
+        @media (min-width: 768px) {
+            .about-section {
+                flex-direction: row;
+            }
+        }
+
+        .about-image {
+            flex: 1;
+            background: #EFECE9;
+            height: 280px;
+            width: 100%;
+            border-radius: 2px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-beige);
+            font-size: 0.85rem;
+            border: 1px solid #E2DDD8;
+        }
+
+        .about-text {
+            flex: 1.5;
+        }
+
+        .about-text h2 {
+            font-size: 1.8rem;
+            color: var(--text-beige);
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+            margin-bottom: 15px;
+            color: var(--text-beige);
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+
+        /* Section 5: Kontakt - Beige */
+        .contact-wrapper {
+            background: var(--ci-beige);
+            color: var(--text-white);
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .contact-wrapper h2 {
+            color: var(--text-white);
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        .contact-wrapper p {
+            max-width: 550px;
+            margin: 0 auto 35px auto;
+            color: var(--text-white);
+            font-size: 0.98rem;
+            line-height: 1.7;
+            opacity: 0.95;
+        }
+
+        /* Footer - Reinweiß */
+        footer {
+            background: var(--bg-light);
+            text-align: center;
+            padding: 30px
