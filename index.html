@@ -1,205 +1,336 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glücksformat – Damit Ideen keine Ideen bleiben</title>
+    <!-- Tenor Sans Font via Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tenor+Sans&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --ci-beige: #B8B1AA;     /* Markenfarbe Beige */
+            --bg-light: #FFFFFF;     /* Reinweiß für Header */
+            --bg-offwhite: #F9F8F6;  /* Zartes Creme für Über mich */
+            --text-beige: #B8B1AA;   /* Beige Fließtext für helle Abschnitte */
+            --text-white: #FFFFFF;   /* Weißer Text für beige Abschnitte */
+        }
 
-  <title>Glücksformat – Damit Ideen sich verwirklichen</title>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Tenor Sans', sans-serif;
+        }
 
-  <meta
-    name="description"
-    content="Glücksformat verbindet Marketing, Struktur und Umsetzung – persönlich, unkompliziert und mit Blick für besondere Ideen."
-  >
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-beige);
+            line-height: 1.6;
+            letter-spacing: 0.02em;
+        }
 
-  <style>
-    * {
-      box-sizing: border-box;
-    }
+        h1, h2, h3 {
+            font-weight: normal;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
 
-    body {
-      margin: 0;
-      padding: 40px 20px;
-      font-family: Arial, Helvetica, sans-serif;
-      line-height: 1.7;
-      color: #27313d;
-      background: #fff8f1;
-    }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 70px 20px;
+        }
 
-    main {
-      max-width: 760px;
-      margin: 0 auto;
-      padding: 60px;
-      background: #ffffff;
-      border-radius: 24px;
-      box-shadow: 0 12px 40px rgba(62, 48, 39, 0.08);
-    }
+        /* Section Header (1. Seite / Hero) - Reinweiß */
+        header {
+            background: var(--bg-light);
+            text-align: center;
+            padding: 90px 20px 70px 20px;
+        }
 
-    .status {
-      display: inline-block;
-      margin-bottom: 24px;
-      padding: 7px 14px;
-      color: #854b60;
-      background: #fce8ee;
-      border-radius: 20px;
-      font-size: 14px;
-      font-weight: bold;
-    }
+        .logo-container {
+            margin-bottom: 35px;
+        }
 
-    h1 {
-      margin: 0;
-      color: #854b60;
-      font-size: 52px;
-      line-height: 1.1;
-    }
+        .logo-img {
+            max-width: 320px;
+            height: auto;
+            display: inline-block;
+        }
 
-    .services {
-      margin: 12px 0 35px;
-      color: #b16d7d;
-      font-size: 18px;
-      font-weight: bold;
-      letter-spacing: 1px;
-    }
+        header p.intro {
+            max-width: 650px;
+            margin: 0 auto 35px auto;
+            font-size: 1.15rem;
+            color: var(--text-beige);
+            line-height: 1.8;
+        }
 
-    h2 {
-      margin: 0 0 28px;
-      color: #27313d;
-      font-size: 30px;
-      line-height: 1.3;
-    }
+        /* Buttons */
+        .btn-outline-white {
+            display: inline-block;
+            border: 1px solid var(--text-white);
+            color: var(--text-white);
+            padding: 12px 35px;
+            border-radius: 2px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            letter-spacing: 0.1em;
+            transition: all 0.3s ease;
+            background: transparent;
+        }
 
-    p {
-      margin: 0 0 22px;
-    }
+        .btn-outline-white:hover {
+            background-color: var(--text-white);
+            color: var(--ci-beige);
+        }
 
-    .highlight {
-      margin: 35px 0;
-      padding: 25px;
-      background: #fdf1e8;
-      border-left: 5px solid #d99a78;
-      border-radius: 12px;
-    }
+        /* Section 2: 3 Prinzipien - Beige */
+        .principles-section {
+            background: var(--ci-beige);
+            color: var(--text-white);
+            padding: 70px 20px;
+        }
 
-    .highlight p {
-      margin: 0;
-    }
+        .principles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 40px;
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
 
-    .ending {
-      margin-top: 35px;
-      color: #854b60;
-      font-size: 20px;
-      font-weight: bold;
-    }
+        .principle-item svg {
+            width: 36px;
+            height: 36px;
+            stroke: var(--text-white);
+            stroke-width: 1.5;
+            fill: none;
+            margin-bottom: 15px;
+        }
 
-    footer {
-      margin-top: 45px;
-      padding-top: 25px;
-      border-top: 1px solid #eadfd7;
-      color: #796f69;
-      text-align: center;
-    }
+        .principle-item h3 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            color: var(--text-white);
+        }
 
-    @media (max-width: 650px) {
-      body {
-        padding: 15px;
-      }
+        .principle-item p {
+            font-size: 0.9rem;
+            color: var(--text-white);
+            opacity: 0.9;
+        }
 
-      main {
-        padding: 35px 25px;
-        border-radius: 18px;
-      }
+        /* Section 3: Wobei ich dich unterstütze - Beige */
+        .services-section {
+            background: var(--ci-beige);
+            color: var(--text-white);
+            padding: 0 20px 80px 20px;
+        }
 
-      h1 {
-        font-size: 39px;
-      }
+        .services-section h2 {
+            text-align: center;
+            font-size: 1.8rem;
+            color: var(--text-white);
+            margin-bottom: 50px;
+        }
 
-      h2 {
-        font-size: 25px;
-      }
-    }
-  </style>
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            padding: 35px 25px;
+            border-radius: 2px;
+            text-align: center;
+        }
+
+        .service-card h3 {
+            color: var(--text-white);
+            margin-bottom: 15px;
+            font-size: 1.15rem;
+        }
+
+        .service-card p {
+            color: var(--text-white);
+            font-size: 0.92rem;
+            line-height: 1.7;
+            opacity: 0.95;
+        }
+
+        /* Section 4: Über mich - Helles Off-White */
+        .about-wrapper {
+            background: var(--bg-offwhite);
+            padding: 80px 20px;
+        }
+
+        .about-section {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            align-items: center;
+        }
+
+        @media (min-width: 768px) {
+            .about-section {
+                flex-direction: row;
+            }
+        }
+
+        .about-image {
+            flex: 1;
+            background: #EFECE9;
+            height: 280px;
+            width: 100%;
+            border-radius: 2px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-beige);
+            font-size: 0.85rem;
+            border: 1px solid #E2DDD8;
+        }
+
+        .about-text {
+            flex: 1.5;
+        }
+
+        .about-text h2 {
+            font-size: 1.8rem;
+            color: var(--text-beige);
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+            margin-bottom: 15px;
+            color: var(--text-beige);
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+
+        /* Section 5: Kontakt - Beige */
+        .contact-wrapper {
+            background: var(--ci-beige);
+            color: var(--text-white);
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .contact-wrapper h2 {
+            color: var(--text-white);
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        .contact-wrapper p {
+            max-width: 550px;
+            margin: 0 auto 35px auto;
+            color: var(--text-white);
+            font-size: 0.98rem;
+            line-height: 1.7;
+            opacity: 0.95;
+        }
+
+        /* Footer - Reinweiß */
+        footer {
+            background: var(--bg-light);
+            text-align: center;
+            padding: 30px 20px;
+            font-size: 0.8rem;
+            color: var(--text-beige);
+        }
+    </style>
 </head>
-
 <body>
-  <main>
-    <span class="status">Im Aufbau</span>
 
+    <!-- 1. Header / Hero Section (Weiss) -->
     <header>
-      <h1>Glücksformat</h1>
-      <p class="services">Marketing · Struktur · Umsetzung</p>
-      <h2>Damit Ideen sich verwirklichen.</h2>
+        <div class="logo-container">
+            <img src="Glücksformat Logo final_hell.png" alt="Glücksformat Logo" class="logo-img" onerror="this.style.display='none'; document.getElementById('alt-logo').style.display='block';">
+            <h1 id="alt-logo" style="display:none; font-size: 2.2rem; color: var(--text-beige); font-weight: normal;">GLÜCKSFORMAT</h1>
+        </div>
+        
+        <p class="intro">
+            Manchmal braucht es einfach jemanden, der mitdenkt, die richtigen Fragen stellt und hilft, aus vielen bunten Gedanken einen klaren Plan zu machen. Ich unterstütze kleine Unternehmen, Selbstständige und den Handel mit frischem Schwung in Marketing und Projektmanagement.
+        </p>
     </header>
 
-    <section>
-      <p>
-        Manchmal beginnt alles mit einer Idee. Mit einem Gedanken,
-        einem Herzensprojekt oder dem Wunsch, etwas Eigenes auf die
-        Beine zu stellen.
-      </p>
+    <!-- 2. Gestaltungsprinzipien (Beige) -->
+    <div class="principles-section">
+        <div class="principles-grid">
+            <div class="principle-item">
+                <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                <h3>MARKETING</h3>
+                <p>Kreative Impulse und durchdachte Konzepte mit Herz.</p>
+            </div>
+            <div class="principle-item">
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/></svg>
+                <h3>STRUKTUR</h3>
+                <p>Klarheit und Ordnung als verlässliches Fundament.</p>
+            </div>
+            <div class="principle-item">
+                <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                <h3>UMSETZUNG</h3>
+                <p>Gemeinsam anpacken und Pläne Wirklichkeit werden lassen.</p>
+            </div>
+        </div>
+    </div>
 
-      <p>
-        Doch zwischen „Ich habe da eine Idee“ und „Es ist geschafft“
-        liegen oft viele kleine Schritte: Struktur schaffen, sichtbar
-        werden, die richtigen Worte finden, Dinge planen und einfach
-        anfangen.
-      </p>
+    <!-- 3. Wobei ich dich unterstütze (Beige) -->
+    <div class="services-section">
+        <h2>Wobei ich dich unterstütze</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Marketing & Kommunikation</h3>
+                <p>Kreative Konzepte, klare Texte und Wegbegleitung – von der ersten Vision bis zur finalen Umsetzung.</p>
+            </div>
+            <div class="service-card">
+                <h3>Projekte & Umsetzung</h3>
+                <p>Aus Ideen wird Realität. Ich denke mit, plane und koordiniere, damit alle Schritte nahtlos ineinandergreifen – von Marketing über Ladenbau bis zur Büroplanung.</p>
+            </div>
+            <div class="service-card">
+                <h3>Struktur & Organisation</h3>
+                <p>Ordnung im Kopf und im Business. Ich schaffe Überblick und helfe dir, To-dos Schritt für Schritt umzusetzen.</p>
+            </div>
+        </div>
+    </div>
 
-      <p>
-        Genau hier entsteht <strong>Glücksformat</strong>.
-      </p>
+    <!-- 4. Über mich (Helles Off-White) -->
+    <div class="about-wrapper">
+        <div class="container" style="padding: 0;">
+            <section class="about-section">
+                <div class="about-image">
+                    [ Dein Foto hier ]
+                </div>
+                <div class="about-text">
+                    <h2>Hallo, ich bin Marleen!</h2>
+                    <p>Ich liebe es, wenn aus Ideen echte, sichtbare Ergebnisse werden. Seit über 15 Jahren schlägt mein Herz für Marketing und Projektmanagement. Nach inspirierenden Stationen in ganz unterschiedlichen Branchen war es eine prägende Zeit in der Schweiz – im Austausch mit einem guten Freund –, die mir den Mut und die Klarheit für meinen eigenen Weg in die Selbstständigkeit geschenkt hat.</p>
+                    <p>Was mich antreibt? Jedes Projekt ist einzigartig. Ich bin eine schnelle Denkerin, arbeite leidenschaftlich gerne kreativ und habe ein Faible dafür, aus einem großen Durcheinander einen klaren, machbaren Weg zu schaffen.</p>
+                </div>
+            </section>
+        </div>
+    </div>
 
-      <p>
-        Ein Ort für kreative Ideen, klare Strukturen und liebevolle
-        Umsetzung. Für Menschen, Projekte und kleine Unternehmen, die
-        etwas bewegen möchten – aber vielleicht noch nicht genau wissen,
-        wie sie aus ihrer Idee einen konkreten Weg machen.
-      </p>
+    <!-- 5. Kontakt (Beige) -->
+    <div class="contact-wrapper" id="kontakt">
+        <h2>Lass uns sprechen!</h2>
+        <p>Du hast eine Idee, ein konkretes Projekt oder einfach zu viele Gedanken gleichzeitig? Lass sie uns unkompliziert sortieren.</p>
+        <a href="mailto:deine-email@beispiel.de" class="btn-outline-white">E-MAIL SCHREIBEN</a>
+    </div>
 
-      <div class="highlight">
-        <p>
-          Glücksformat verbindet <strong>Marketing, Struktur und
-          Umsetzung</strong> – persönlich, unkompliziert und mit Blick
-          für das, was eine Idee besonders macht.
-        </p>
-      </div>
-
-      <p>
-        Diese Website befindet sich gerade im Aufbau. Aber hinter den
-        Kulissen entsteht bereits etwas Schönes.
-      </p>
-
-      <p>
-        Glücksformat – damit aus Ideen Wirklichkeit wird. Und aus
-        Wirklichkeit etwas, das glücklich macht.
-      </p>
-
-      <p class="ending">
-        ✨ Bald gibt es hier mehr zu entdecken.
-        
-
-      </p>
-    </section>
-
+    <!-- Footer (Weiss) -->
     <footer>
-      Impressum
-
-- Angaben gemäß § 5 DDG
-
-- Marleen Riedel
-Inhaberin | Glücksformat
-Marketing / Struktur / Umsetzung
-
-- Hanauer Landstraße 58
-60314 Frankfurt
-📞 +49 178 2839391
-📧 marleen@gluecksformat.com
-
-- Glücksformat ist ein Kleingewerbe im Bereich Marketing, Struktur und Umsetzung.
-
-- Als Kleinunternehmer im Sinne des § 19 UStG wird keine Umsatzsteuer berechnet.
-
-- Hinweis:
-Dieses Impressum gilt für die Internetpräsenz von Glücksformat unter der Domain gluecksformat.com
+        <p>&copy; 2026 Glücksformat – Marketing / Struktur / Umsetzung</p>
     </footer>
-  </main>
+
 </body>
 </html>
