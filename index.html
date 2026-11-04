@@ -178,13 +178,13 @@
             display: flex;
             flex-direction: column;
             gap: 40px;
-            align-items: stretch;
+            align-items: flex-start;
         }
 
         @media (min-width: 768px) {
             .about-section {
                 flex-direction: row;
-                align-items: stretch;
+                align-items: flex-start;
             }
         }
 
@@ -197,11 +197,11 @@
 
         .about-image img {
             width: 100%;
-            height: 100%;
-            object-fit: cover; /* Passt das Bild exakt an die Texthöhe an */
+            height: auto;
+            max-height: 480px; /* Begrenzt die Höhe perfekt auf Text-Niveau */
+            object-fit: cover;
             border-radius: 2px;
             display: block;
-            min-height: 350px;
         }
 
         .about-text {
