@@ -56,7 +56,7 @@
         }
 
         .logo-img {
-            max-width: 650px; /* An den Text darunter angepasst */
+            max-width: 650px;
             width: 100%;
             height: auto;
             display: inline-block;
@@ -178,7 +178,7 @@
             display: flex;
             flex-direction: column;
             gap: 40px;
-            align-items: center;
+            align-items: flex-start; /* Oben ausrichten */
         }
 
         @media (min-width: 768px) {
@@ -189,16 +189,18 @@
 
         .about-image {
             flex: 1;
-            background: #EFECE9;
-            height: 280px;
             width: 100%;
             border-radius: 2px;
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             justify-content: center;
-            color: var(--text-beige);
-            font-size: 0.85rem;
-            border: 1px solid #E2DDD8;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto; /* Zeigt das Bild vollständig ohne Beschneidung */
+            border-radius: 2px;
+            display: block;
         }
 
         .about-text {
@@ -303,7 +305,6 @@
     <!-- 1. Header / Hero Section (Weiss) -->
     <header>
         <div class="logo-container">
-            <!-- Logo mit neuem Dateinamen und angepasster Breite -->
             <img src="Logo_hell.png" alt="Glücksformat Logo" class="logo-img" onerror="this.style.display='none'; document.getElementById('alt-logo').style.display='block';">
             <h1 id="alt-logo" style="display:none; font-size: 2.2rem; color: var(--text-beige); font-weight: normal;">GLÜCKSFORMAT</h1>
         </div>
@@ -357,9 +358,9 @@
     <div class="about-wrapper">
         <div class="container" style="padding: 0;">
             <section class="about-section">
-                <!-- Dein Foto (marleen.png) -->
-                <div class="about-image" style="padding: 0; overflow: hidden; background: none; border: none;">
-                    <img src="marleen.png" alt="Marleen – Glücksformat" style="width: 100%; height: 100%; object-fit: cover; border-radius: 2px;" onerror="this.style.display='none'; this.parentElement.innerHTML='[ Dein Foto hier ]';">
+                <!-- Dein Foto (Marleen.png) -->
+                <div class="about-image">
+                    <img src="Marleen.png" alt="Marleen – Glücksformat" onerror="this.src='marleen.png';">
                 </div>
                 <div class="about-text">
                     <h2>Hallo, ich bin Marleen!</h2>
@@ -379,7 +380,7 @@
         <a href="mailto:marleen@gluecksformat.com" class="btn-outline-white">E-MAIL SCHREIBEN</a>
     </div>
 
-    <!-- Footer mit elegantem Impressum-Link -->
+    <!-- Footer mit einem klaren Impressum-Link -->
     <footer>
         <div class="footer-links">
             <button onclick="toggleImpressum()">Impressum</button>
@@ -418,3 +419,4 @@
 
 </body>
 </html>
+
