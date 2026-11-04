@@ -178,13 +178,13 @@
             display: flex;
             flex-direction: column;
             gap: 40px;
-            align-items: flex-start;
+            align-items: center; /* Mittig zum Text ausgerichtet */
         }
 
         @media (min-width: 768px) {
             .about-section {
                 flex-direction: row;
-                align-items: flex-start;
+                align-items: center; /* Mittig zum Text ausgerichtet */
             }
         }
 
@@ -198,8 +198,9 @@
         .about-image img {
             width: 100%;
             height: auto;
-            max-height: 480px; /* Begrenzt die Höhe perfekt auf Text-Niveau */
+            max-height: 460px;
             object-fit: cover;
+            object-position: center 20%; /* Verschiebt den Bildausschnitt etwas nach unten, damit der Kopf frei bleibt */
             border-radius: 2px;
             display: block;
         }
