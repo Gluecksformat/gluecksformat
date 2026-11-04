@@ -1,184 +1,338 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Glücksformat – Damit Ideen keine Ideen bleiben</title>
-  
-  <!-- Tenor Sans Font via Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Tenor+Sans&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glücksformat – Damit Ideen keine Ideen bleiben</title>
+    <!-- Tenor Sans Font via Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tenor+Sans&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --ci-beige: #B8B1AA;     /* Markenfarbe Beige */
+            --bg-light: #FFFFFF;     /* Reinweiß für Header */
+            --bg-offwhite: #F9F8F6;  /* Zartes Creme für Über mich */
+            --text-beige: #B8B1AA;   /* Beige Fließtext für helle Abschnitte */
+            --text-white: #FFFFFF;   /* Weißer Text für beige Abschnitte */
+        }
 
-  <style>
-    :root {
-      --ci-beige: #B8B1AA;     /* Markenfarbe Beige */
-      --bg-light: #FFFFFF;     /* Reinweiß für Header */
-      --bg-offwhite: #F9F8F6;  /* Zartes Creme für Über mich */
-      --text-beige: #B8B1AA;   /* Beige Fließtext für helle Schnitte */
-      --text-white: #FFFFFF;   /* Weißer Text für beige Abschnitte */
-    }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Tenor Sans', sans-serif;
+        }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: 'Tenor Sans', sans-serif;
-    }
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-beige);
+            line-height: 1.6;
+            letter-spacing: 0.02em;
+        }
 
-    body {
-      background-color: var(--bg-light);
-      color: var(--text-beige);
-      line-height: 1.6;
-      letter-spacing: 0.02em;
-    }
+        h1, h2, h3 {
+            font-weight: normal;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
 
-    /* Container & Layout */
-    .container {
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 70px 20px;
+        }
 
-    header {
-      padding: 40px 0 20px;
-      text-align: center;
-    }
+        /* Section Header (1. Seite / Hero) - Reinweiß */
+        header {
+            background: var(--bg-light);
+            text-align: center;
+            padding: 90px 20px 70px 20px;
+        }
 
-    .logo {
-      max-width: 200px;
-      height: auto;
-    }
+        .logo-container {
+            margin-bottom: 35px;
+        }
 
-    /* Hero Section */
-    .hero {
-      text-align: center;
-      padding: 60px 0 80px;
-    }
+        .logo-img {
+            max-width: 320px;
+            height: auto;
+            display: inline-block;
+        }
 
-    h1 {
-      font-size: 2.2rem;
-      font-weight: normal;
-      color: var(--ci-beige);
-      margin-bottom: 20px;
-      line-height: 1.3;
-    }
+        header p.intro {
+            max-width: 650px;
+            margin: 0 auto 35px auto;
+            font-size: 1.15rem;
+            color: var(--text-beige);
+            line-height: 1.8;
+        }
 
-    .subline {
-      font-size: 1.2rem;
-      max-width: 650px;
-      margin: 0 auto;
-    }
+        /* Buttons */
+        .btn-outline-white {
+            display: inline-block;
+            border: 1px solid var(--text-white);
+            color: var(--text-white);
+            padding: 12px 35px;
+            border-radius: 2px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            letter-spacing: 0.1em;
+            transition: all 0.3s ease;
+            background: transparent;
+        }
 
-    /* Section: Über mich */
-    .about {
-      background-color: var(--bg-offwhite);
-      padding: 80px 0;
-      border-radius: 12px;
-      margin: 40px 0;
-    }
+        .btn-outline-white:hover {
+            background-color: var(--text-white);
+            color: var(--ci-beige);
+        }
 
-    .about-content {
-      display: flex;
-      align-items: center;
-      gap: 40px;
-      flex-wrap: wrap;
-    }
+        /* Section 2: 3 Prinzipien - Beige */
+        .principles-section {
+            background: var(--ci-beige);
+            color: var(--text-white);
+            padding: 70px 20px;
+        }
 
-    .about-image {
-      flex: 1;
-      min-width: 280px;
-      border-radius: 8px;
-      overflow: hidden;
-    }
+        .principles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 40px;
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
 
-    .about-image img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
+        .principle-item svg {
+            width: 36px;
+            height: 36px;
+            stroke: var(--text-white);
+            stroke-width: 1.5;
+            fill: none;
+            margin-bottom: 15px;
+        }
 
-    .about-text {
-      flex: 1.5;
-      min-width: 280px;
-    }
+        .principle-item h3 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            color: var(--text-white);
+        }
 
-    h2 {
-      font-size: 1.8rem;
-      font-weight: normal;
-      margin-bottom: 20px;
-      color: var(--ci-beige);
-    }
+        .principle-item p {
+            font-size: 0.9rem;
+            color: var(--text-white);
+            opacity: 0.9;
+        }
 
-    /* Section: Beige Akzent */
-    .accent-box {
-      background-color: var(--ci-beige);
-      color: var(--text-white);
-      padding: 60px 40px;
-      border-radius: 12px;
-      text-align: center;
-      margin: 60px 0;
-    }
+        /* Section 3: Wobei ich dich unterstütze - Beige */
+        .services-section {
+            background: var(--ci-beige);
+            color: var(--text-white);
+            padding: 0 20px 80px 20px;
+        }
 
-    .accent-box h2 {
-      color: var(--text-white);
-    }
+        .services-section h2 {
+            text-align: center;
+            font-size: 1.8rem;
+            color: var(--text-white);
+            margin-bottom: 50px;
+        }
 
-    /* Footer */
-    footer {
-      text-align: center;
-      padding: 40px 0;
-      font-size: 0.9rem;
-      border-top: 1px solid var(--bg-offwhite);
-    }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
 
-    footer a {
-      color: var(--ci-beige);
-      text-decoration: none;
-      margin: 0 10px;
-    }
-  </style>
+        .service-card {
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            padding: 35px 25px;
+            border-radius: 2px;
+            text-align: center;
+        }
+
+        .service-card h3 {
+            color: var(--text-white);
+            margin-bottom: 15px;
+            font-size: 1.15rem;
+        }
+
+        .service-card p {
+            color: var(--text-white);
+            font-size: 0.92rem;
+            line-height: 1.7;
+            opacity: 0.95;
+        }
+
+        /* Section 4: Über mich - Helles Off-White */
+        .about-wrapper {
+            background: var(--bg-offwhite);
+            padding: 80px 20px;
+        }
+
+        .about-section {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            align-items: center;
+        }
+
+        @media (min-width: 768px) {
+            .about-section {
+                flex-direction: row;
+            }
+        }
+
+        .about-image {
+            flex: 1;
+            background: #EFECE9;
+            height: 280px;
+            width: 100%;
+            border-radius: 2px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-beige);
+            font-size: 0.85rem;
+            border: 1px solid #E2DDD8;
+        }
+
+        .about-text {
+            flex: 1.5;
+        }
+
+        .about-text h2 {
+            font-size: 1.8rem;
+            color: var(--text-beige);
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+            margin-bottom: 15px;
+            color: var(--text-beige);
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+
+        /* Section 5: Kontakt - Beige */
+        .contact-wrapper {
+            background: var(--ci-beige);
+            color: var(--text-white);
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .contact-wrapper h2 {
+            color: var(--text-white);
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        .contact-wrapper p {
+            max-width: 550px;
+            margin: 0 auto 35px auto;
+            color: var(--text-white);
+            font-size: 0.98rem;
+            line-height: 1.7;
+            opacity: 0.95;
+        }
+
+        /* Footer - Reinweiß */
+        footer {
+            background: var(--bg-light);
+            text-align: center;
+            padding: 30px 20px;
+            font-size: 0.8rem;
+            color: var(--text-beige);
+        }
+    </style>
 </head>
 <body>
 
-  <!-- Header mit Logo -->
-  <header class="container">
-    <img src="Logo_hell.png" alt="Glücksformat Logo" class="logo">
-  </header>
-
-  <!-- Hauptbereich / Hero -->
-  <main class="container">
-    <section class="hero">
-      <h1>Glücksformat</h1>
-      <p class="subline">Damit Ideen keine Ideen bleiben.</p>
-    </section>
-
-    <!-- Über mich Bereich -->
-    <section class="about">
-      <div class="container about-content">
-        <div class="about-image">
-          <img src="Marleen.png" alt="Marleen">
+    <!-- 1. Header / Hero Section (Weiss) -->
+    <header>
+        <div class="logo-container">
+            <!-- Logo mit neuem Dateinamen -->
+            <img src="Logo_hell.png" alt="Glücksformat Logo" class="logo-img" onerror="this.style.display='none'; document.getElementById('alt-logo').style.display='block';">
+            <h1 id="alt-logo" style="display:none; font-size: 2.2rem; color: var(--text-beige); font-weight: normal;">GLÜCKSFORMAT</h1>
         </div>
-        <div class="about-text">
-          <h2>Herzlich Willkommen</h2>
-          <p>Schön, dass du da bist. Glücksformat unterstützt dich dabei, deine Visionen, Projekte und kreativen Konzepte in die Tat umzusetzen.</p>
+        
+        <p class="intro">
+            Manchmal braucht es einfach jemanden, der mitdenkt, die richtigen Fragen stellt und hilft, aus vielen bunten Gedanken einen klaren Plan zu machen. Ich unterstütze kleine Unternehmen, Selbstständige und den Handel mit frischem Schwung in Marketing und Projektmanagement.
+        </p>
+    </header>
+
+    <!-- 2. Gestaltungsprinzipien (Beige) -->
+    <div class="principles-section">
+        <div class="principles-grid">
+            <div class="principle-item">
+                <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                <h3>MARKETING</h3>
+                <p>Kreative Impulse und durchdachte Konzepte mit Herz.</p>
+            </div>
+            <div class="principle-item">
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/></svg>
+                <h3>STRUKTUR</h3>
+                <p>Klarheit und Ordnung als verlässliches Fundament.</p>
+            </div>
+            <div class="principle-item">
+                <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                <h3>UMSETZUNG</h3>
+                <p>Gemeinsam anpacken und Pläne Wirklichkeit werden lassen.</p>
+            </div>
         </div>
-      </div>
-    </section>
-
-    <!-- Akzent-Box -->
-    <section class="accent-box">
-      <h2>Lass uns gemeinsam loslegen</h2>
-      <p>Von der ersten Idee bis zum fertigen Ergebnis begleite ich dich Schritt für Schritt.</p>
-    </section>
-  </main>
-
-  <!-- Footer -->
-  <footer>
-    <div class="container">
-      <p>&copy; 2026 Glücksformat. Alle Rechte vorbehalten.</p>
     </div>
-  </footer>
+
+    <!-- 3. Wobei ich dich unterstütze (Beige) -->
+    <div class="services-section">
+        <h2>Wobei ich dich unterstütze</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Marketing & Kommunikation</h3>
+                <p>Kreative Konzepte, klare Texte und Wegbegleitung – von der ersten Vision bis zur finalen Umsetzung.</p>
+            </div>
+            <div class="service-card">
+                <h3>Projekte & Umsetzung</h3>
+                <p>Aus Ideen wird Realität. Ich denke mit, plane und koordiniere, damit alle Schritte nahtlos ineinandergreifen – von Marketing über Ladenbau bis zur Büroplanung.</p>
+            </div>
+            <div class="service-card">
+                <h3>Struktur & Organisation</h3>
+                <p>Ordnung im Kopf und im Business. Ich schaffe Überblick und helfe dir, To-dos Schritt für Schritt umzusetzen.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 4. Über mich (Helles Off-White) -->
+    <div class="about-wrapper">
+        <div class="container" style="padding: 0;">
+            <section class="about-section">
+                <!-- Dein Foto (marleen.png) -->
+                <div class="about-image" style="padding: 0; overflow: hidden; background: none; border: none;">
+                    <img src="marleen.png" alt="Marleen – Glücksformat" style="width: 100%; height: 100%; object-fit: cover; border-radius: 2px;" onerror="this.style.display='none'; this.parentElement.innerHTML='[ Dein Foto hier ]';">
+                </div>
+                <div class="about-text">
+                    <h2>Hallo, ich bin Marleen!</h2>
+                    <p>Ich liebe es, wenn aus Ideen echte, sichtbare Ergebnisse werden. Seit über 15 Jahren schlägt mein Herz für Marketing und Projektmanagement. Nach inspirierenden Stationen in ganz unterschiedlichen Branchen war es eine prägende Zeit in der Schweiz – im Austausch mit einem guten Freund –, die mir den Mut und die Klarheit für meinen eigenen Weg in die Selbstständigkeit geschenkt hat.</p>
+                    <p>Was mich antreibt? Jedes Projekt ist einzigartig. Ich bin eine schnelle Denkerin, arbeite leidenschaftlich gerne kreativ und habe ein Faible dafür, aus einem großen Durcheinander einen klaren, machbaren Weg zu schaffen.</p>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- 5. Kontakt (Beige) -->
+    <div class="contact-wrapper" id="kontakt">
+        <h2>Lass uns sprechen!</h2>
+        <p>Du hast eine Idee, ein konkretes Projekt oder einfach zu viele Gedanken gleichzeitig? Lass sie uns unkompliziert sortieren.</p>
+        <a href="mailto:deine-email@beispiel.de" class="btn-outline-white">E-MAIL SCHREIBEN</a>
+    </div>
+
+    <!-- Footer (Weiss) -->
+    <footer>
+        <p>&copy; 2026 Glücksformat – Marketing / Struktur / Umsetzung</p>
+    </footer>
 
 </body>
 </html>
