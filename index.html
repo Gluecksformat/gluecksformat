@@ -178,12 +178,13 @@
             display: flex;
             flex-direction: column;
             gap: 40px;
-            align-items: flex-start; /* Oben ausrichten */
+            align-items: stretch;
         }
 
         @media (min-width: 768px) {
             .about-section {
                 flex-direction: row;
+                align-items: stretch;
             }
         }
 
@@ -192,15 +193,15 @@
             width: 100%;
             border-radius: 2px;
             display: flex;
-            align-items: flex-start;
-            justify-content: center;
         }
 
         .about-image img {
             width: 100%;
-            height: auto; /* Zeigt das Bild vollständig ohne Beschneidung */
+            height: 100%;
+            object-fit: cover; /* Passt das Bild exakt an die Texthöhe an */
             border-radius: 2px;
             display: block;
+            min-height: 350px;
         }
 
         .about-text {
