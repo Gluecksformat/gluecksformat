@@ -80,10 +80,10 @@
             display: inline-block;
             border: 1px solid var(--text-white);
             color: var(--text-white);
-            padding: 12px 35px;
+            padding: 13px 38px;
             border-radius: 2px;
             text-decoration: none;
-            font-size: 0.9rem;
+            font-size: 1rem;
             letter-spacing: 0.1em;
             transition: all 0.3s ease;
             background: transparent;
@@ -120,15 +120,15 @@
         }
 
         .principle-item h3 {
-            font-size: 1.1rem;
+            font-size: 1.25rem;
             margin-bottom: 10px;
             color: var(--text-white);
         }
 
         .principle-item p {
-            font-size: 0.9rem;
+            font-size: 1.02rem;
             color: var(--text-white);
-            opacity: 0.9;
+            opacity: 0.92;
         }
 
         /* Section 3: Wobei ich dich unterstütze - Beige */
@@ -140,7 +140,7 @@
 
         .services-section h2 {
             text-align: center;
-            font-size: 1.8rem;
+            font-size: 2.05rem;
             color: var(--text-white);
             margin-bottom: 50px;
         }
@@ -163,68 +163,69 @@
         .service-card h3 {
             color: var(--text-white);
             margin-bottom: 15px;
-            font-size: 1.15rem;
+            font-size: 1.3rem;
         }
 
         .service-card p {
             color: var(--text-white);
-            font-size: 0.92rem;
+            font-size: 1.05rem;
             line-height: 1.7;
             opacity: 0.95;
         }
 
-        /* Section 4: Über mich - Helles Off-White */
+        /* Section 4: Über mich - Klassischer Textumlauf (Magazine-Style) */
         .about-wrapper {
             background: var(--bg-offwhite);
             padding: 80px 20px;
         }
 
-        .about-section {
-            display: flex;
-            flex-direction: column;
-            gap: 40px;
-            align-items: center;
-        }
-
-        @media (min-width: 768px) {
-            .about-section {
-                flex-direction: row;
-                align-items: center;
-            }
+        .about-container {
+            max-width: 900px;
+            margin: 0 auto;
+            overflow: hidden; /* sorgt dafür, dass das gefloatete Bild sauber umschlossen wird */
         }
 
         .about-image {
-            flex: 1;
-            width: 100%;
-            border-radius: 2px;
-            display: flex;
+            float: left;
+            width: 42%;
+            margin-right: 5%;
+            margin-bottom: 20px;
         }
 
         .about-image img {
             width: 100%;
             height: auto;
-            max-height: 460px;
-            object-fit: cover;
-            object-position: center 20%;
             border-radius: 2px;
             display: block;
-        }
-
-        .about-text {
-            flex: 1.5;
+            object-fit: cover;
         }
 
         .about-text h2 {
-            font-size: 1.8rem;
+            font-size: 1.75rem;
+            line-height: 1.2;
             color: var(--text-beige);
             margin-bottom: 20px;
         }
 
         .about-text p {
-            margin-bottom: 15px;
+            margin-bottom: 16px;
             color: var(--text-beige);
-            font-size: 0.95rem;
+            font-size: 1.08rem;
             line-height: 1.8;
+        }
+
+        .about-text p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Responsives Verhalten für Smartphones */
+        @media (max-width: 767px) {
+            .about-image {
+                float: none;
+                width: 100%;
+                margin-right: 0;
+                margin-bottom: 30px;
+            }
         }
 
         /* Section 5: Kontakt - Beige */
@@ -237,15 +238,15 @@
 
         .contact-wrapper h2 {
             color: var(--text-white);
-            font-size: 1.8rem;
+            font-size: 2.05rem;
             margin-bottom: 20px;
         }
 
         .contact-wrapper p {
-            max-width: 550px;
+            max-width: 580px;
             margin: 0 auto 35px auto;
             color: var(--text-white);
-            font-size: 0.98rem;
+            font-size: 1.1rem;
             line-height: 1.7;
             opacity: 0.95;
         }
@@ -255,7 +256,7 @@
             background: var(--bg-light);
             text-align: center;
             padding: 40px 20px;
-            font-size: 0.85rem;
+            font-size: 0.95rem;
             color: var(--text-beige);
             border-top: 1px solid #F0ECE6;
         }
@@ -268,7 +269,7 @@
             background: none;
             border: none;
             color: var(--text-beige);
-            font-size: 0.85rem;
+            font-size: 0.95rem;
             letter-spacing: 0.05em;
             cursor: pointer;
             text-decoration: underline;
@@ -287,7 +288,7 @@
             background: var(--bg-offwhite);
             border-radius: 4px;
             text-align: left;
-            font-size: 0.8rem;
+            font-size: 0.9rem;
             line-height: 1.6;
         }
 
@@ -296,7 +297,7 @@
         }
 
         .impressum-toggle h3 {
-            font-size: 0.95rem;
+            font-size: 1.05rem;
             margin-bottom: 12px;
             color: var(--text-beige);
             letter-spacing: 0.05em;
@@ -364,20 +365,18 @@
 
     <!-- 4. Über mich (Helles Off-White) -->
     <div class="about-wrapper">
-        <div class="container" style="padding: 0;">
-            <section class="about-section">
-                <!-- Dein Foto (Marleen.png) -->
-                <div class="about-image">
-                    <img src="Marleen.png" alt="Marleen – Glücksformat" onerror="this.src='marleen.png';">
-                </div>
-                <div class="about-text">
-                    <h2>Hallo, ich bin Marleen!</h2>
-                    <p>Ich liebe es, wenn aus Ideen etwas Echtes entsteht. Wenn aus Visionen konkrete Projekte werden und aus Gedanken sichtbare Ergebnisse.</p>
-                    <p>Seit über 15 Jahren schlägt mein Herz für Marketing und Projektmanagement. Auf meinem bisherigen Weg durfte ich in ganz unterschiedlichen Branchen wertvolle Erfahrungen sammeln, inspirierende Menschen kennenlernen und immer wieder über mich hinauswachsen.</p>
-                    <p>Eine ganz besondere Zeit führte mich in die Schweiz. Dort entstand aus einer Begegnung zwischen zwei Freunden etwas, das mein Leben nachhaltig geprägt hat: Einer brauchte Unterstützung, der andere konnte sie geben. Aus diesem gegenseitigen Vertrauen, dem Zusammenhalt und dem Gefühl, gemeinsam etwas bewegen zu können, entstand Glücksformat.</p>
-                    <p>Heute verbinde ich meine Leidenschaft, meine Erfahrung und meine Freude daran, Dinge ins Rollen zu bringen. Mit Herz, Weitblick und dem Anspruch, aus guten Ideen etwas Besonderes zu machen.</p>
-                </div>
-            </section>
+        <div class="about-container">
+            <!-- Dein Foto floatet links, Text fließt rechts daneben und unten herum -->
+            <div class="about-image">
+                <img src="Marleen.png" alt="Marleen – Glücksformat" onerror="this.src='marleen.png';">
+            </div>
+            <div class="about-text">
+                <h2>Hallo, ich bin Marleen!</h2>
+                <p>Ich liebe es, wenn aus Ideen etwas Echtes entsteht. Wenn aus Visionen konkrete Projekte werden und aus Gedanken sichtbare Ergebnisse.</p>
+                <p>Seit über 15 Jahren schlägt mein Herz für Marketing und Projektmanagement. Auf meinem bisherigen Weg durfte ich in ganz unterschiedlichen Branchen wertvolle Erfahrungen sammeln, inspirierende Menschen kennenlernen und immer wieder über mich hinauswachsen.</p>
+                <p>Eine ganz besondere Zeit führte mich in die Schweiz. Dort entstand aus einer Begegnung zwischen zwei Freunden etwas, das mein Leben nachhaltig geprägt hat: Einer brauchte Unterstützung, der andere konnte sie geben. Aus diesem gegenseitigen Vertrauen, dem Zusammenhalt und dem Gefühl, gemeinsam etwas bewegen zu können, entstand Glücksformat.</p>
+                <p>Heute verbinde ich meine Leidenschaft, meine Erfahrung und meine Freude daran, Dinge ins Rollen zu bringen. Mit Herz, Weitblick und dem Anspruch, aus guten Ideen etwas Besonderes zu machen.</p>
+            </div>
         </div>
     </div>
 
